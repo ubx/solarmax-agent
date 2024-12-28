@@ -1,8 +1,8 @@
-import paho.mqtt.client as mqtt
-import paho.mqtt.publish as publish
 import socket
 import sys
 import time
+
+import paho.mqtt.publish as publish
 
 ## This agent reads from the solarmax inverter socket and
 ## publishes the data to an MQTT listener.
@@ -21,16 +21,16 @@ iot_broker = "k4cp0.messaging.internetofthings.ibmcloud.com"
 iot_port = 1883
 iot_topic = "iot-2/evt/status/fmt/json"
 
-IDC = "IDC"   # DC Current
-UL1 = "UL1"   # Voltage Phase 1
-TKK = "TKK"   # Inverter operating temp
-IL1 = "IL1"   # Current phase 1
-SYS = "SYS"   # 4E28 = 17128
-TNF = "TNF"   # Generated frequency (Hz)
-UDC = "UDC"   # DC voltage (V DC)
-PAC = "PAC"   # AC power being generated * 2 (W)
-PRL = "PRL"   # Relative output (%)
-KT0 = "KT0"   # Total yield (kWh)
+IDC = "IDC"  # DC Current
+UL1 = "UL1"  # Voltage Phase 1
+TKK = "TKK"  # Inverter operating temp
+IL1 = "IL1"  # Current phase 1
+SYS = "SYS"  # 4E28 = 17128
+TNF = "TNF"  # Generated frequency (Hz)
+UDC = "UDC"  # DC voltage (V DC)
+PAC = "PAC"  # AC power being generated * 2 (W)
+PRL = "PRL"  # Relative output (%)
+KT0 = "KT0"  # Total yield (kWh)
 
 field_map = {
     IDC: 'dc_current',
